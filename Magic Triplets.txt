@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Solution
+{
+public:
+int Magictriplets(vector <int> nums){
+	int n = nums.size();
+    int count =  0 ; 
+    for(int j = 0 ; j < n ; j++){
+        int l = 0 , r = 0 ;
+        for(int i = 0 ; i , j ;i++){
+            if(nums[i]<nums[j])
+            l++;
+        }
+        for(int k = j + 1 ; k < n ; k++){
+            if(nums[k]>nums[j])
+            r++;
+        }
+        count++(l*r);
+    }
+    return count;
+}
+};
+
+int main(){
+    int t ; 
+    cin>>t;
+    while(t--)
+    {
+        int n ; 
+        cin>>n ;
+        vector <int> nums(n);
+        for(int i = 0 ; i < n ; i++)
+        cin>>nums[i];
+        Solution ob;
+        int ans = ob.Magictriplets(nums);
+        cout<<ans<<"\n";
+    }
+    return 0 ;
+}
